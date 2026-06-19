@@ -1,10 +1,10 @@
 # WEB103 Project 3 - *Name of App Here*
 
-Submitted by: **Your name here**
+Submitted by: Elizabeth Kilroy 
 
 About this web app: **App description here**
 
-Time spent: **X** hours
+Time spent: 12 hours
 
 ## Required Features
 
