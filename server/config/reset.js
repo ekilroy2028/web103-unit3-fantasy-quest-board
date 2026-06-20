@@ -37,7 +37,7 @@ const seedLocations = async () => {
         ('The Rusty Tankard', 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=400', '12 Cobblestone Way', 'Eldermoor', 'Vaelthorn', '00112'),
         ('The Whispering Woods', 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=400', '1 Forest Path', 'Eldermoor', 'Vaelthorn', '00113'),
         ('Crumbled Spire', 'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=400', '99 Ruin Road', 'Eldermoor', 'Vaelthorn', '00114'),
-        ('Obsidian Hollow', 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400', '666 Shadow Pass', 'Eldermoor', 'Vaelthorn', '00115');
+        ('Obsidian Hollow', 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=400', '666 Shadow Pass', 'Eldermoor', 'Vaelthorn', '00115');
     `)
 }
 
@@ -50,7 +50,7 @@ const seedEvents = async () => {
         ('Moonlit Hunt', '2026-07-03', '21:00', 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=400', 2),
         ('Druid Gathering', '2026-07-15', '12:00', 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=400', 2),
         ('Ruins Excavation Tour', '2026-07-05', '10:00', 'https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=400', 3),
-        ('Dragonfire Trial', '2026-07-20', '17:00', 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400', 4);
+        ('Dragonfire Trial', '2026-07-20', '17:00', 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=400', 4);
     `)
 }
 

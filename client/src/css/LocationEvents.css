@@ -37,3 +37,35 @@
 .location-events main i {
     margin-right: 10px;
 }
+
+.location-filter {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.location-filter label {
+    margin-right: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.location-filter select {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 220px;
+}
+
+.location-filter select option {
+    background-color: white;
+    color: var(--primary);
+    font-weight: 600;
+}

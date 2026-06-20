@@ -30,8 +30,8 @@ const Events = () => {
 
     return (
         <div className='location-events'>
-            <div style={{ textAlign: 'center', margin: '20px 0' }}>
-                <label htmlFor='locationFilter' style={{ marginRight: '10px', fontWeight: 'bold' }}>
+            <div className='location-filter'>
+                <label htmlFor='locationFilter'>
                     Filter by location:
                 </label>
                 <select
