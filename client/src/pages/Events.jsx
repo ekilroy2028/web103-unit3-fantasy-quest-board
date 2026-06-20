@@ -1,35 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import * as dates from '../utils/dates'
-import '../css/Event.css'
+import Event from '../components/Event'
+import EventsAPI from '../services/EventsAPI'
+import '../css/LocationEvents.css'
 
-const Event = (props) => {
-
-    const [time, setTime] = useState('')
-    const [remaining, setRemaining] = useState('')
-
-    useEffect(() => {
-        const formattedTime = dates.formatTime(props.time)
-        setTime(formattedTime)
-    }, [props.time])
+const Events = () => {
+    const [events, setEvents] = useState([])
 
     useEffect(() => {
-        const timeRemaining = dates.formatRemainingTime(props.date, props.time)
-        setRemaining(timeRemaining)
-    }, [props.date, props.time])
+        (async () => {
+            try {
+                const eventsData = await EventsAPI.getAllEvents()
+                setEvents(eventsData)
+            }
+            catch (error) {
+                console.error('Error loading events:', error)
+            }
+        })()
+    }, [])
 
     return (
-        <article className='event-information'>
-            <img src={props.image} alt={props.title} />
-
-            <div className='event-information-overlay'>
-                <div className='text'>
-                    <h3>{props.title}</h3>
-                    <p><i className="fa-regular fa-calendar fa-bounce"></i> {props.date} <br /> {time}</p>
-                    <p id={`remaining-${props.id}`}>{remaining}</p>
-                </div>
-            </div>
-        </article>
+        <div className='location-events'>
+            <main>
+                {
+                    events && events.length > 0 ? events.map((event) =>
+                        <Event
+                            key={event.id}
+                            id={event.id}
+                            title={event.title}
+                            date={event.date}
+                            time={event.time}
+                            image={event.image}
+                        />
+                    ) : <h2><i className="fa-regular fa-calendar-xmark fa-shake"></i> {'No events scheduled yet!'}</h2>
+                }
+            </main>
+        </div>
     )
 }
 
-export default Event
+export default Events
