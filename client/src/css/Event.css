@@ -51,3 +51,12 @@
     padding: 10px;
     text-align: center;
 }
+
+.event-passed {
+    opacity: 0.5;
+    filter: grayscale(80%);
+}
+
+.event-passed img {
+    filter: grayscale(100%);
+}
