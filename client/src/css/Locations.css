@@ -1,27 +1,27 @@
-.venue1-button-overlay {
-    opacity: 1;
-    z-index: 10;
-    position: relative;
-    top: 15%;
-    left: -5%;
+.available-locations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.venue2-button-overlay {
-    opacity: 1;
-    z-index: 10;
-}
-
-.venue3-button-overlay {
-    opacity: 1;
-    z-index: 10;
-    position: relative;
-    left: 30%;
-}
-
+.venue1-button-overlay,
+.venue2-button-overlay,
+.venue3-button-overlay,
 .venue4-button-overlay {
-    opacity: 1;
-    z-index: 10;
-    position: relative;
-    top: 20%;
-    left: -5%;
+    display: block;
+}
+
+.venue1-button-overlay button,
+.venue2-button-overlay button,
+.venue3-button-overlay button,
+.venue4-button-overlay button {
+    width: 100%;
+    padding: 32px 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
 }

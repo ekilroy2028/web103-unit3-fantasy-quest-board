@@ -1,0 +1,34 @@
+const formatTime = (timeString) => {
+    if (!timeString) return ''
+
+    const [hours, minutes] = timeString.split(':')
+    const hourNum = parseInt(hours)
+    const period = hourNum >= 12 ? 'PM' : 'AM'
+    const displayHour = hourNum % 12 === 0 ? 12 : hourNum % 12
+
+    return `${displayHour}:${minutes} ${period}`
+}
+
+const formatRemainingTime = (dateString, timeString) => {
+    if (!dateString || !timeString) return ''
+
+    const eventDateTime = new Date(`${dateString}T${timeString}`)
+    const now = new Date()
+    const diffMs = eventDateTime - now
+
+    if (diffMs < 0) {
+        return 'This event has passed'
+    }
+
+    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+
+    if (days > 0) {
+        return `${days} day${days !== 1 ? 's' : ''} ${hours} hour${hours !== 1 ? 's' : ''} remaining`
+    }
+
+    const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60))
+    return `${hours} hour${hours !== 1 ? 's' : ''} ${minutes} minute${minutes !== 1 ? 's' : ''} remaining`
+}
+
+export { formatTime, formatRemainingTime }
