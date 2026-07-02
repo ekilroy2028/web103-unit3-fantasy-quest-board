@@ -5,24 +5,25 @@ import LocationsAPI from '../services/LocationsAPI'
 import EventsAPI from '../services/EventsAPI'
 import '../css/LocationEvents.css'
 
-const LocationEvents = ({ index }) => {
+const LocationEvents = () => {
+    const { id } = useParams()
     const [location, setLocation] = useState({})
     const [events, setEvents] = useState([])
 
     useEffect(() => {
         (async () => {
             try {
-                const locationData = await LocationsAPI.getLocationById(index)
+                const locationData = await LocationsAPI.getLocationById(id)
                 setLocation(locationData)
 
-                const eventsData = await EventsAPI.getEventsByLocationId(index)
+                const eventsData = await EventsAPI.getEventsByLocationId(id)
                 setEvents(eventsData)
             }
             catch (error) {
                 console.error('Error loading location events:', error)
             }
         })()
-    }, [index])
+    }, [id])
 
     return (
         <div className='location-events'>
