@@ -4,7 +4,7 @@ import { getAllEvents, getEventById, getEventsByLocationId } from '../controller
 const router = express.Router()
 
 router.get('/', getAllEvents)
-router.get('/:id', getEventById)
 router.get('/location/:locationId', getEventsByLocationId)
+router.get('/:id', getEventById)
 
 export default router
